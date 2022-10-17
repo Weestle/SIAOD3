@@ -11,7 +11,7 @@ class Tree {
 private:
     Node *head;
 public:
-    Tree(Node* head, std::string expression);
+    Tree(Node* head);
     Node* get_head();
     bool is_expression(Node* head);
     bool contains_multi(Node* head);

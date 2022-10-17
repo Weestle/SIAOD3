@@ -30,14 +30,9 @@ bool Tree::contains_multi(Node* head) {
 }
 
 void Tree::display() {
-    std::cout << "zxc";
+    this->get_head()->display();
 }
 
-Tree::Tree(Node* head, std::string expression) {
-    if (expression.find('*')) {
-        string temp1 = expression.substr(0, expression.find('*'));
-        string temp2 = expression.substr(expression.find('*') + 1, expression.length());
-
-    }
-    if (!get_head()) head = nullptr;
+Tree::Tree(Node *head) {
+    this->head = head;
 }
