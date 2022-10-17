@@ -102,6 +102,3 @@ bool Node::is_expression() {
     if (this->get_right() != nullptr) this->get_right()->is_expression();
     return true;
 }
-
-
-

@@ -24,8 +24,8 @@ void Tree::display() {
     this->get_head()->display();
 }
 
-Tree::Tree(Node *head) {
-    this->head = head;
+Tree::Tree(string expression) {
+    this->head = new Node(expression);
 }
 
 int Tree::count() {
