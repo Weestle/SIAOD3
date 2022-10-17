@@ -13,9 +13,10 @@ private:
 public:
     Tree(Node* head);
     Node* get_head();
-    bool is_expression(Node* head);
-    bool contains_multi(Node* head);
+    bool is_expression();
+    bool contains_multi();
     void display();
+    int count();
 };
 
 

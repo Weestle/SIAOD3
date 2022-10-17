@@ -25,6 +25,9 @@ public:
     int get_number();
     char get_operation();
     void display();
+    int count();
+    bool contains_multi();
+    bool is_expression();
 };
 
 

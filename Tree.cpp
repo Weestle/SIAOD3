@@ -12,21 +12,12 @@ Node *Tree::get_head() {
     return head;
 }
 
-bool Tree::is_expression(Node* head) {
-    if (head->get_left() && head->get_right() && head->get_number()) return false; // Имеет два последователя и число
-    if (!head->get_left() && head->get_right() || head->get_left() && !head->get_right()) return false; // Имеет не два последователя
-    if (!head->get_left() && !head->get_right() && !head->get_number()) return false; // Не имеет последователей и не число
-    if ((head->get_operation() == '*' || head->get_operation() == '+' || head->get_operation() == '-') && (!head->get_left() || !head->get_right())) return false;
-    if (head->get_left()) is_expression(head->get_left());
-    if (head->get_right()) is_expression(head->get_right());
-    return true;
+bool Tree::is_expression() {
+    return this->get_head()->is_expression();
 }
 
-bool Tree::contains_multi(Node* head) {
-    if (head->get_operation() == '*') return true;
-    if (head->get_left()) contains_multi(head->get_left());
-    if (head->get_right()) contains_multi(head->get_right());
-    return false;
+bool Tree::contains_multi() {
+    return this->get_head()->contains_multi();
 }
 
 void Tree::display() {
@@ -35,4 +26,8 @@ void Tree::display() {
 
 Tree::Tree(Node *head) {
     this->head = head;
+}
+
+int Tree::count() {
+    return this->get_head()->count();
 }
