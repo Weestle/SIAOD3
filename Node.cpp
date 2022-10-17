@@ -69,11 +69,16 @@ void Node::set_operation(char operation) {
     this->operation = operation;
 }
 
-void Node::display() {
-    if (this->get_operation() != ' ') cout << this->get_operation();
-    else cout << this->get_number();
-    if (this->get_left() != nullptr) this->get_left()->display();
-    if (this->get_right() != nullptr) this->get_right()->display();
+void Node::display(int level) {
+    string offset = "";
+    for (int i = 0; i < level; i++) {
+        offset += "   ";
+    }
+
+    if (this->get_left() != nullptr) this->get_left()->display(level + 1);
+    if (this->get_operation() != ' ') cout << offset << this->get_operation() << endl;
+    else cout << offset << this->get_number() << endl;
+    if (this->get_right() != nullptr) this->get_right()->display(level + 1);
 }
 
 int Node::count() {

@@ -21,7 +21,7 @@ bool Tree::contains_multi() {
 }
 
 void Tree::display() {
-    this->get_head()->display();
+    this->get_head()->display(0);
 }
 
 Tree::Tree(string expression) {

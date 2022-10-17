@@ -24,7 +24,7 @@ public:
     Node* get_right();
     int get_number();
     char get_operation();
-    void display();
+    void display(int level);
     int count();
     bool contains_multi();
     bool is_expression();

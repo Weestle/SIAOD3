@@ -11,8 +11,8 @@ int main() {
     }
     str = temp;
     Tree tree = Tree(str);
+    tree.display();
     if (tree.is_expression()) {
-        tree.display();
         cout << endl;
         cout << tree.count();
         if (tree.contains_multi()) cout << "+";
