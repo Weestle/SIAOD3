@@ -103,6 +103,10 @@ bool Node::contains_multi() {
 bool Node::is_expression() {
     if (this->get_right() == nullptr && this->get_left() != nullptr ||
         this->get_right() != nullptr && this->get_left() == nullptr) return false;
+    if (this->get_operation() != ' ') {
+        if (this->get_left() != nullptr && this->get_left()->get_operation() != ' ') return false;
+        if (this->get_right() != nullptr && this->get_right()->get_operation() != ' ') return false;
+    }
     if (this->get_left() != nullptr) this->get_left()->is_expression();
     if (this->get_right() != nullptr) this->get_right()->is_expression();
     return true;
